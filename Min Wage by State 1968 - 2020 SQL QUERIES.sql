@@ -45,7 +45,7 @@ select year, state, EffectiveMinimumWage
 from MinWages.dbo.MinimumWageData	
 where year = 2020 -- place x year here
 order by EffectiveMinimumWage desc
-limit 1 -- for certain databases, LIMIT does not exist and leads to error. 'TOP 1' needs to be added to the first line before year (select TOP 1 year) instead for the same effect. 
+limit 1 -- for certain databases, LIMIT does not exist and leads to error. 'TOP 1' needs to be added to the select statement before year ('select TOP 1 year') instead for the same effect. Make sure to remove 'LIMIT 1' then.
 
 -- Analyze the trend of a specific type of minimal wage (State, Federal, Effective) over the years
 select year, avg(EffectiveMinimumWage) as AvgEffectiveMinWage -- Options: avg(EffectiveMinimumWage), avg(StateMinimumWage), avg(FederalMinimumWage)
